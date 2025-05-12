@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Renforcement de l’Ombre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(#0a0a0a, #1a0e03);
+      color: #f26822;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .qr {
+      margin: 40px auto;
+      width: 200px;
+      height: 200px;
+      background: url('https://api.qrserver.com/v1/create-qr-code/?data=44Affq5kSiGBoZ...Xz3aGZL8ZzMwN&size=200x200') no-repeat center center;
+      background-size: cover;
+      border: 5px double #f26822;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .wallet {
+      font-size: 0.95em;
+      word-break: break-all;
+      background: #111;
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid #f26822;
+    }
+    button {
+      background: #f26822;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #ff9944;
+    }
+  </style>
+</head>
+<body>
+<h1>💰 Renforcement de l’Ombre</h1>
+<p>
+  Le Vide se nourrit. Ton sacrifice nous élève.<br>
+  Scanne le sigil ci-dessous et offre sans retour.
+</p>
+<div class="qr" onmouseover="document.getElementById('cash-audio').play()"></div>
+<p class="wallet" id="wallet">44Affq5kSiGBoZ...Xz3aGZL8ZzMwN</p>
+<button onclick="navigator.clipboard.writeText(document.getElementById('wallet').textContent)">📋 Copier</button>
+<audio id="cash-audio" preload="auto">
+  <source src="monero_cash_register.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>
